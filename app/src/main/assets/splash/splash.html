@@ -1,0 +1,42 @@
+<html lang="jp">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<style>
+body {
+  background-color: black;
+}
+.center{
+  text-align: center;
+  width:100%;
+  height:100%;
+}
+#logo {
+}
+</style>
+<body>
+<div class="center">
+  <p id="wh"></p>
+  <img id="logo" src="start_an.gif"/>
+</div>
+
+<script>
+    function setMargin() {
+        var w = screen.width;
+        var h = screen.height;
+        if (h > w) {
+            var elm = document.getElementById("logo");
+            elm.style.marginTop = '25vh';
+        } else {
+            var elm = document.getElementById("logo");
+            elm.style.marginTop = '10vh';
+        }
+    }
+    window.addEventListener("orientationchange", function() {
+        setMargin();
+    });
+    setMargin();
+  </script>
+</body>
+</hhtml>
