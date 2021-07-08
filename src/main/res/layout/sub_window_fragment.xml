@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#777777">
+
+    <LinearLayout
+        android:id="@+id/mainView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/btn_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:text= "ハンドサインカメラ">
+        </TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/rootView"
+        android:visibility="visible"
+        android:layout_below="@id/mainView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/closeMainButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Close Main" />
+
+        <Button
+            android:id="@+id/closeSubButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Close Sub"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_height="320dp"
+        android:layout_width="240dp"
+        android:layout_below="@id/rootView"
+        android:id="@+id/tfView"
+        android:background="#808080">
+
+        <FrameLayout
+            android:id="@+id/cameraPreview"
+            android:layout_width="320dp"
+            android:layout_height="220dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:adjustViewBounds="true"
+            android:keepScreenOn="true"
+            />
+        <ImageView
+            android:id="@+id/imageViewResult"
+            android:layout_width="160dp"
+            android:layout_height="120dp"
+            android:padding="2dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#808080"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+
+            <TextView
+                android:id="@+id/text_mes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="パーとグーを認識します"
+                android:textColor="@android:color/white"
+                android:textSize="12dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/text_ok"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="パー"
+                    android:textColor="@android:color/white"
+                    android:textSize="18dp" />
+
+                <RelativeLayout
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ProgressBar
+                        android:id="@+id/ProgressBarOk"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:max="100"
+                        android:progress="0"
+                        android:indeterminate="false"
+                        android:progressDrawable="@drawable/custom_progress"
+                        />
+                    <ProgressBar
+                        android:id="@+id/ProgressBarOkMatch"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:max="100"
+                        android:progress="0"
+                        android:visibility="gone"
+                        android:indeterminate="false"
+                        android:progressDrawable="@drawable/custom_progress_match"
+                        />
+                    <TextView
+                        android:id="@+id/text_percOk"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@android:color/white">
+                    </TextView>
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:layout_marginLeft="124dp"
+                        android:background="@android:color/holo_red_light"/>
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/text_ng"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="グー"
+                    android:textColor="@android:color/white"
+                    android:textSize="18dp" />
+
+
+                <RelativeLayout
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ProgressBar
+                        android:id="@+id/ProgressBarNg"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:max="100"
+                        android:progress="0"
+                        android:indeterminate="false"
+                        android:progressDrawable="@drawable/custom_progress"
+                        />
+                    <ProgressBar
+                        android:id="@+id/ProgressBarNgMatch"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:max="100"
+                        android:progress="0"
+                        android:visibility="gone"
+                        android:indeterminate="false"
+                        android:progressDrawable="@drawable/custom_progress_match"
+                        />
+                    <TextView
+                        android:id="@+id/text_percNg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@android:color/white">
+                    </TextView>
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:layout_marginLeft="124dp"
+                        android:background="@android:color/holo_red_light"/>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="検出"
+                android:visibility="gone"
+                android:textColor="@android:color/white"
+                android:textSize="18dp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
